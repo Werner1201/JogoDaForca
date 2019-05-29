@@ -1,6 +1,7 @@
 from controle.verificaCredencial import *
 
-def primeiraTela():
+
+def primeiratela():
     print("#" * 30)
     print("####### Login de Admin #######")
     print("#" * 30)
@@ -10,8 +11,8 @@ def primeiraTela():
     return controleLogin(nome, senha)
 
 
-def error(numErr):
-    erros = numErr
+def error(numerr):
+    erros = numerr
     print("Login ou Senha Inválidos")
     print(f"Digite novamente ({erros}/3)")
     nome = input("Login:")
@@ -20,20 +21,16 @@ def error(numErr):
 
 
 def containercontrole():
-    if primeiraTela():
+    if primeiratela():
+        return True
         # executa o menu de Admin
     else:
         i = 1
         res = error(i)
-        while not res or i>3:
-            i+=1
+        while not res or i > 3:
+            i += 1
             res = error(i)
         if i > 3:
             print("Número de Tentativas Esgotada. Fechando o Programa.")
 
-        #executa o menu pois funcionou
-
-
-
-
-
+        # executa o menu pois funcionou
